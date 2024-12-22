@@ -14,7 +14,6 @@ export const InputUrl = ({ setUrl }) => {
         placeholder="Enter URL"
         name="url"
         onChange={handleInputChange}
-        required
       />
       <InputAddon size="lg" borderRadius="none">
         /
@@ -23,7 +22,7 @@ export const InputUrl = ({ setUrl }) => {
         size="lg"
         borderRadius="none"
         placeholder="alias (if you need)"
-        name="alias"
+        name="custom"
         onChange={handleInputChange}
       />
     </Group>

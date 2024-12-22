@@ -1,15 +1,17 @@
-import axios from "axios";
-
-export const getUrl = async ({ url, alias }) => {
+export const getUrl = async ({ url, custom }) => {
   try {
-    const response = await axios.post(import.meta.env.VITE_API_URL, {
-      url,
-      alias,
+    const response = await fetch(import.meta.env.VITE_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url, custom }),
     });
 
-    return response.data.url;
+    const data = await response.json();
+
+    return data.url;
   } catch (error) {
-    console.error(error);
-    return error;
+    return error.message;
   }
 };

@@ -1,8 +1,8 @@
 import { Box, HStack, Heading } from "@chakra-ui/react";
 import { InputUrl } from "./components/InputUrl";
-import { Radio } from "./components/Radio";
+import { Providers } from "./components/Providers";
 import { useState } from "react";
-import { URLShortenerDialog } from "./components/Dialog";
+import { URLShortenerDialog } from "./components/URLShortenerDialog";
 
 export default function App() {
   const [url, setUrl] = useState({});
@@ -21,7 +21,7 @@ export default function App() {
         <InputUrl setUrl={setUrl} />
         <URLShortenerDialog url={url} />
       </HStack>
-      <Radio />
+      <Providers />
     </Box>
   );
 }
