@@ -1,6 +1,6 @@
 import { Group, Input, InputAddon } from "@chakra-ui/react";
 
-export const InputUrl = ({ setUrl }) => {
+const InputUrl = ({ setUrl }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUrl((prev) => ({ ...prev, [name]: value }));
@@ -28,3 +28,5 @@ export const InputUrl = ({ setUrl }) => {
     </Group>
   );
 };
+
+export default InputUrl;

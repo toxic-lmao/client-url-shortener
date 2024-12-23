@@ -18,7 +18,7 @@ import { InputGroup } from "@/components/ui/input-group";
 import { getUrl } from "../libs/getUrl";
 import { useEffect, useState } from "react";
 
-export const URLShortenerDialog = ({ url }) => {
+const URLShortenerDialog = ({ url }) => {
   const [shortUrl, setShortUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -102,3 +102,5 @@ export const URLShortenerDialog = ({ url }) => {
     </HStack>
   );
 };
+
+export default URLShortenerDialog;

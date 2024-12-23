@@ -2,7 +2,7 @@ import { HStack } from "@chakra-ui/react";
 import { RadioCardItem, RadioCardRoot } from "@/components/ui/radio-card";
 import providers from "../libs/providers.json";
 
-export const Providers = () => {
+const Providers = () => {
   return (
     <RadioCardRoot defaultValue="ulvis">
       <HStack align="stretch">
@@ -20,3 +20,5 @@ export const Providers = () => {
     </RadioCardRoot>
   );
 };
+
+export default Providers;

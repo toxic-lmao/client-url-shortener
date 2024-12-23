@@ -1,8 +1,11 @@
 import { Box, HStack, Heading } from "@chakra-ui/react";
-import { InputUrl } from "./components/InputUrl";
-import { Providers } from "./components/Providers";
-import { useState } from "react";
-import { URLShortenerDialog } from "./components/URLShortenerDialog";
+import { lazy, Suspense, useState } from "react";
+
+const InputUrl = lazy(() => import("./components/InputUrl"));
+const Providers = lazy(() => import("./components/Providers"));
+const URLShortenerDialog = lazy(() =>
+  import("./components/URLShortenerDialog")
+);
 
 export default function App() {
   const [url, setUrl] = useState({});
@@ -17,11 +20,13 @@ export default function App() {
       gap="4em"
     >
       <Heading size="4xl">URL Shortener</Heading>
-      <HStack>
-        <InputUrl setUrl={setUrl} />
-        <URLShortenerDialog url={url} />
-      </HStack>
-      <Providers />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HStack>
+          <InputUrl setUrl={setUrl} />
+          <URLShortenerDialog url={url} />
+        </HStack>
+        <Providers />
+      </Suspense>
     </Box>
   );
 }
